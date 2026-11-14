@@ -256,7 +256,7 @@ assert_equal(index(State("", [], None, []), "Error!"),
 
 
 @route
-def encrypt_result(state: State, message="", image=None) -> Page:
+def encrypt_result(state: State, message="", image:Picture|None=None) -> Page:
     """
     Displays an encrypted image using steganography for the user to download. Returns
         to the main page if no image is given or if the message is too long.
@@ -326,7 +326,7 @@ assert_equal(encrypt_result(State("", [], None, []), "AAAA", Picture.new(3,1,"aq
 
 
 @route
-def decrypt_result(state: State, message="", image=None) -> Page:
+def decrypt_result(state: State, message="", image:Picture|None=None) -> Page:
     """
     Displays an decrypted message from image steganography for the user to download. Returns
         to the main page if no image is given.
