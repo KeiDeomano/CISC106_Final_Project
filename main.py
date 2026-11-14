@@ -95,9 +95,9 @@ def nextPixel(state: State, text_index: int, pixel: int) -> list[int]:
     Returns the coordinates of the next pixel. Moves left to right, top to bottom.
     
     Arguments:
-        state (State):
-        text_index (int):
-        pixel(int):
+        state (State): The website's state.
+        text_index (int): The character index of the overall hidden message in the image. 
+        pixel(int): The pixel index (0 - 2) being currently encoded for the current character.
         
     Returns:
         list[int]: The x, y coordinates of the next pixel.
