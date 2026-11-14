@@ -205,15 +205,16 @@ def index(state: State, error="") -> Page:
         Header("Encryption Message:", 3),
         TextArea("message", state.message),
         "\n",
-        Header("Image:", 3),
-        FileUpload("image", accept=[".png",".jpg",".jpeg"]),
+        Header(".png* Image:", 3),
+        FileUpload("image", accept=".png"),
         "\n\n",
         Button("Encrypt", "encrypt_result"),
         Button("Decrypt", "decrypt_result"),
         "\n\n",
         Button("History", "history"),
         "\n\n",
-        Link("How does this work?", "info")
+        Link("How does this work?", "info"), 
+        Paragraph("*.jpg/.jpeg lossy compression ruins the image steganography!"),
         ])
 
 assert_equal(index(State("", [], None, [])),
@@ -223,15 +224,16 @@ assert_equal(index(State("", [], None, [])),
             Header("Encryption Message:", 3),
             TextArea("message", ""),
             "\n",
-            Header("Image:", 3),
-            FileUpload("image", accept=[".png",".jpg",".jpeg"]),
+            Header(".png* Image:", 3),
+            FileUpload("image", accept=".png"),
             "\n\n",
             Button("Encrypt", "encrypt_result"),
             Button("Decrypt", "decrypt_result"),
             "\n\n",
             Button("History", "history"),
             "\n\n",
-            Link("How does this work?", "info")
+            Link("How does this work?", "info"), 
+            Paragraph("*.jpg/.jpeg lossy compression ruins the image steganography!")
             ]))
 assert_equal(index(State("", [], None, []), "Error!"),
             Page(State("", [], None, []), [
@@ -240,15 +242,16 @@ assert_equal(index(State("", [], None, []), "Error!"),
             Header("Encryption Message:", 3),
             TextArea("message", ""),
             "\n",
-            Header("Image:", 3),
-            FileUpload("image", accept=[".png",".jpg",".jpeg"]),
+            Header(".png* Image:", 3),
+            FileUpload("image", accept=".png"),
             "\n\n",
             Button("Encrypt", "encrypt_result"),
             Button("Decrypt", "decrypt_result"),
             "\n\n",
             Button("History", "history"),
             "\n\n",
-            Link("How does this work?", "info")
+            Link("How does this work?", "info"), 
+            Paragraph("*.jpg/.jpeg lossy compression ruins the image steganography!")
             ]))
 
 
@@ -291,15 +294,16 @@ assert_equal(encrypt_result(State("", [], None, []), "", None),
             Header("Encryption Message:", 3),
             TextArea("message", ""),
             "\n",
-            Header("Image:", 3),
-            FileUpload("image", accept=[".png",".jpg",".jpeg"]),
+            Header(".png* Image:", 3),
+            FileUpload("image", accept=".png"),
             "\n\n",
             Button("Encrypt", "encrypt_result"),
             Button("Decrypt", "decrypt_result"),
             "\n\n",
             Button("History", "history"),
             "\n\n",
-            Link("How does this work?", "info")
+            Link("How does this work?", "info"), 
+            Paragraph("*.jpg/.jpeg lossy compression ruins the image steganography!")
             ]))
 assert_equal(encrypt_result(State("", [], None, []), "AAAA", Picture.new(3,1,"aqua")),
             Page(State("AAAA", [], Picture.new(3,1,"aqua"), []), [
@@ -308,15 +312,16 @@ assert_equal(encrypt_result(State("", [], None, []), "AAAA", Picture.new(3,1,"aq
             Header("Encryption Message:", 3),
             TextArea("message", "AAAA"),
             "\n",
-            Header("Image:", 3),
-            FileUpload("image", accept=[".png",".jpg",".jpeg"]),
+            Header(".png* Image:", 3),
+            FileUpload("image", accept=".png"),
             "\n\n",
             Button("Encrypt", "encrypt_result"),
             Button("Decrypt", "decrypt_result"),
             "\n\n",
             Button("History", "history"),
             "\n\n",
-            Link("How does this work?", "info")
+            Link("How does this work?", "info"),
+            Paragraph("*.jpg/.jpeg lossy compression ruins the image steganography!")
             ]))
 
 
@@ -361,15 +366,16 @@ assert_equal(decrypt_result(State("", [], None, []), "", None),
             Header("Encryption Message:", 3),
             TextArea("message", ""),
             "\n",
-            Header("Image:", 3),
-            FileUpload("image", accept=[".png",".jpg",".jpeg"]),
+            Header(".png* Image:", 3),
+            FileUpload("image", accept=".png"),
             "\n\n",
             Button("Encrypt", "encrypt_result"),
             Button("Decrypt", "decrypt_result"),
             "\n\n",
             Button("History", "history"),
             "\n\n",
-            Link("How does this work?", "info")
+            Link("How does this work?", "info"),
+            Paragraph("*.jpg/.jpeg lossy compression ruins the image steganography!")
             ]))
 assert_equal(decrypt_result(State("", [], None, []), "", Picture.new(3,2,"aqua")),
             Page(State("m", ["01101101"], Picture.new(3,2,"aqua"), [Encoded("m", ["01101101"], Picture.new(3,2,"aqua"))]), [
