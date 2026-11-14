@@ -8,7 +8,7 @@ set_site_information(
     author="Kei Deomano",
     description="Image Steganography Encryption and Decryption.",
     sources="",
-    planning=[],
+    planning=["Brainstorming.docx","Design.docx"],
     links=[]
 )
 hide_debug_information()
